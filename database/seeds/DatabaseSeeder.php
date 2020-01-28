@@ -22,8 +22,10 @@ class UsuarioTableSeeder extends Seeder
 {
     public function run()
     {
+        $senha = bcrypt('12345');
+
         DB::insert('INSERT INTO usuarios (login, senha, administrador, nome) VALUES (?, ?, ?, ?)',
-            ['admin', '12345', '1', 'admin']);
+            ['admin', $senha, '1', 'admin']);
     }
 }
 
